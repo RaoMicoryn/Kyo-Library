@@ -83,7 +83,7 @@ export const SEED = [
     title:
       'After Helping the "Ice Princess" from Another School, I Decided to Start as a Friend',
     author: "Satsuki Hiryuu, Wanda Kuro",
-    genre: "Romance, Comedy, Drama, School Life, Slice of Life",
+    genre: "Reincarnation, Action, Romance, Comedy, Adventure, Magic, Harem, Isekai, Drama, Fantasy",
     year: 2021,
     synopsis:
       'Despite being bullied, scorned, and oppressed all of his life, a 34-year-old shut-in still found the resolve to attempt something heroic—only for it to end in a tragic accident. But in a twist of fate, he awakens in another world as Rudeus Greyrat, starting life again as a baby born to two loving parents. Preserving his memories and knowledge from his previous life, Rudeus quickly adapts to his new environment. With the mind of a grown adult, he starts to display magical talent that exceeds all expectations, honing his skill with the help of a mage named Roxy Migurdia. Rudeus learns swordplay from his father, Paul, and meets Sylphiette, a girl his age who quickly becomes his closest friend. As Rudeus second chance at life begins, he tries to make the most of his new opportunity while conquering his traumatic past. And perhaps, one day, he may find the one thing he could not find in his old world—love.',
