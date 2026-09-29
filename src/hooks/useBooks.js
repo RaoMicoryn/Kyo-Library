@@ -50,23 +50,25 @@ function syncSeedSynopses(list) {
 
 function addRecentSeedBooks(list) {
   const recentCovers = ["/images/Takou.jpg", "/images/Mushoku.jpg"];
+  let changed = false;
+  const next = list.map((book) => {
+    const seed = SEED.find(
+      (item) => recentCovers.includes(item.cover) && item.cover === book.cover,
+    );
+    if (!seed) return book;
+
+    changed ||= Object.keys(seed).some((key) => book[key] !== seed[key]);
+    return { ...seed, ...book, ...seed, id: book.id, notes: book.notes || "" };
+  });
+
   const missing = SEED.filter(
     (seed) =>
       recentCovers.includes(seed.cover) &&
-      !list.some(
-        (book) =>
-          book.cover === seed.cover ||
-          (book.title === seed.title &&
-            book.author === seed.author &&
-            String(book.year) === String(seed.year)),
-      ),
-  );
+      !next.some((book) => book.cover === seed.cover),
+  ).map((book) => ({ ...book, id: uid(), notes: "" }));
 
-  if (missing.length === 0) return list;
-  return [
-    ...list,
-    ...missing.map((book) => ({ ...book, id: uid(), notes: "" })),
-  ];
+  if (missing.length === 0 && !changed) return list;
+  return [...next, ...missing];
 }
 
 export function useBooks() {
