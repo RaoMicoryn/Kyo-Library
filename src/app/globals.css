@@ -1,0 +1,78 @@
+/* Tailwind without preflight, so it doesn't fight Ant Design's own reset */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+:root {
+  --bg: #000;
+  --bg-soft: #0f0f0f;
+  --card: #141414;
+  --card-hi: #1c1c1c;
+  --line: #2a2a2a;
+  --line-hi: #4a4a4a;
+  --text: #f5f5f5;
+  --muted: #8f8f8f;
+  --accent: #fff;
+  --accent-text: #000;
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --sans: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #fff;
+  --bg-soft: #f4f4f4;
+  --card: #f7f7f7;
+  --card-hi: #ececec;
+  --line: #dcdcdc;
+  --line-hi: #a8a8a8;
+  --text: #0a0a0a;
+  --muted: #6c6c6c;
+  --accent: #000;
+  --accent-text: #fff;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-soft: var(--bg-soft);
+  --color-card: var(--card);
+  --color-card-hi: var(--card-hi);
+  --color-line: var(--line);
+  --color-line-hi: var(--line-hi);
+  --color-fg: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-text);
+  --font-serif: var(--serif);
+  --font-sans: var(--sans);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+body {
+  margin: 0;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p { margin: 0; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
