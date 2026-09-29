@@ -81,8 +81,8 @@ export const SEED = [
   {
     cover: "/images/Mushoku.jpg",
     title:
-      'After Helping the "Ice Princess" from Another School, I Decided to Start as a Friend',
-    author: "Satsuki Hiryuu, Wanda Kuro",
+      'Mushoku Tensei: Jobless Reincarnation',
+    author: "Rifujin na Magonote, Fujikawa Yuka",
     genre: "Reincarnation, Action, Romance, Comedy, Adventure, Magic, Harem, Isekai, Drama, Fantasy",
     year: 2021,
     synopsis:
